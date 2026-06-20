@@ -1,105 +1,104 @@
-// ==================== MIXED CHALLENGE 1 — STUDENT RESULT & ELIGIBILITY ====================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercises</title>
+</head>
+<body>
 
-let obtainedMarks = 72;
-let passingMarks = 40;
-let attendance = 85;
-let requiredAttendance = 75;
+    <!-- ==================== EXERCISE 1 ==================== -->
+    <h2>Exercise 1 - Student Marks Counter</h2>
 
-console.log(obtainedMarks >= passingMarks); // true
-console.log(attendance >= requiredAttendance); // true
-console.log(obtainedMarks >= passingMarks && attendance >= requiredAttendance); // true
-console.log(obtainedMarks > 70 || attendance > 90); // true
-console.log(attendance >= requiredAttendance); // true
-console.log(obtainedMarks === passingMarks); // false
+    <h1 class="marks">50</h1>
 
+    <button class="addMarks">Add Bonus Marks</button>
+    <button class="deductMarks">Deduct Marks</button>
 
-// ==================== MIXED CHALLENGE 2 — ONLINE SHOPPING WEBSITE ====================
+    <hr>
 
-let cartTotal = 5500;
-let minimumOrder = 3000;
-let walletBalance = 4000;
-let premiumMember = true;
+    <!-- ==================== EXERCISE 2 ==================== -->
+    <h2>Exercise 2 - Age Counter</h2>
 
-console.log(cartTotal >= minimumOrder); // true
-console.log(walletBalance >= cartTotal); // false
-console.log(cartTotal >= minimumOrder && walletBalance >= cartTotal); // false
-console.log(premiumMember || cartTotal > 5000); // true
-console.log(walletBalance >= cartTotal); // false
-console.log(premiumMember === true); // true
+    <h1 class="age">18</h1>
 
+    <button class="birthday">Birthday</button>
+    <button class="goBack">Go Back One Year</button>
 
-// ==================== MIXED CHALLENGE 3 — GAMING PLATFORM ====================
+    <hr>
 
-let playerLevel = 18;
-let requiredLevel = 15;
-let coins = 1800;
-let requiredCoins = 2000;
-let premiumPass = true;
+    <!-- ==================== EXERCISE 3 ==================== -->
+    <h2>Exercise 3 - Light Bulb Status</h2>
 
-console.log(playerLevel >= requiredLevel); // true
-console.log(coins >= requiredCoins); // false
-console.log(playerLevel >= requiredLevel && coins >= requiredCoins); // false
-console.log(premiumPass || playerLevel > 20); // true
-console.log(requiredCoins > coins); // true
-console.log(premiumPass !== false); // true
+    <h1 class="bulbStatus">Bulb is OFF</h1>
 
+    <button class="turnOn">Turn ON</button>
+    <button class="turnOff">Turn OFF</button>
 
-// ==================== MIXED CHALLENGE 4 — BANK ACCOUNT VERIFICATION ====================
+    <script>
 
-let accountBalance = 50000;
-let withdrawalAmount = 15000;
-let pinVerified = true;
-let dailyLimit = 20000;
+        // ==================== EXERCISE 1 ====================
 
-console.log(withdrawalAmount <= dailyLimit); // true
-console.log(accountBalance >= withdrawalAmount); // true
-console.log(pinVerified && accountBalance >= withdrawalAmount); // true
-console.log(accountBalance > 100000 || pinVerified); // true
-console.log(withdrawalAmount < dailyLimit); // true
-console.log(pinVerified === true); // true
+        let marks = 50;
 
+        const marksHeading = document.querySelector(".marks");
+        const addBtn = document.querySelector(".addMarks");
+        const deductBtn = document.querySelector(".deductMarks");
 
-// ==================== MIXED CHALLENGE 5 — EVENT REGISTRATION SYSTEM ====================
+        function addMarks() {
+            marks += 5;
+            marksHeading.innerHTML = marks;
+        }
 
-let age = 19;
-let minimumAge = 18;
-let registeredParticipants = 480;
-let maximumParticipants = 500;
-let vipInvite = false;
+        function deductMarks() {
+            marks -= 5;
+            marksHeading.innerHTML = marks;
+        }
 
-console.log(age >= minimumAge); // true
-console.log(registeredParticipants < maximumParticipants); // true
-console.log(age >= minimumAge && registeredParticipants < maximumParticipants); // true
-console.log(vipInvite || age > 25); // false
-console.log(registeredParticipants < maximumParticipants); // true
-console.log(vipInvite !== true); // true
+        addBtn.addEventListener("click", addMarks);
+        deductBtn.addEventListener("click", deductMarks);
 
 
-// ==================== MIXED CHALLENGE 6 — JOB APPLICATION PORTAL ====================
+        // ==================== EXERCISE 2 ====================
 
-let experience = 3;
-let requiredExperience = 2;
-let degreeCompleted = true;
-let referralAvailable = false;
+        let age = 18;
 
-console.log(experience >= requiredExperience); // true
-console.log(degreeCompleted); // true
-console.log(experience >= requiredExperience && degreeCompleted); // true
-console.log(degreeCompleted || referralAvailable); // true
-console.log(experience >= requiredExperience); // true
-console.log(referralAvailable == true); // false
+        const ageHeading = document.querySelector(".age");
+        const birthdayBtn = document.querySelector(".birthday");
+        const backBtn = document.querySelector(".goBack");
+
+        function incrementAge() {
+            age++;
+            ageHeading.innerHTML = age;
+        }
+
+        function decrementAge() {
+            age--;
+            ageHeading.innerHTML = age;
+        }
+
+        birthdayBtn.addEventListener("click", incrementAge);
+        backBtn.addEventListener("click", decrementAge);
 
 
-// ==================== MIXED CHALLENGE 7 — UNIVERSITY ADMISSION ====================
+        // ==================== EXERCISE 3 ====================
 
-let testScore = 82;
-let requiredScore = 75;
-let documentsSubmitted = true;
-let sportsQuota = false;
+        const bulbHeading = document.querySelector(".bulbStatus");
+        const onBtn = document.querySelector(".turnOn");
+        const offBtn = document.querySelector(".turnOff");
 
-console.log(testScore >= requiredScore); // true
-console.log(documentsSubmitted); // true
-console.log(testScore >= requiredScore && documentsSubmitted); // true
-console.log(sportsQuota || testScore > 90); // false
-console.log(testScore >= requiredScore); // true
-console.log(sportsQuota === false); // true
+        function turnOn() {
+            bulbHeading.innerHTML = "Bulb is ON";
+        }
+
+        function turnOff() {
+            bulbHeading.innerHTML = "Bulb is OFF";
+        }
+
+        onBtn.addEventListener("click", turnOn);
+        offBtn.addEventListener("click", turnOff);
+
+    </script>
+
+</body>
+</html>
